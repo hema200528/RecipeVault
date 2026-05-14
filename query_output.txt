@@ -1,0 +1,185 @@
+ flavour_profile | total_recipes 
+-----------------+---------------
+ Vanilla/Cream   |           762
+ Chocolate       |           455
+ Other           |           218
+ Spiced          |           113
+ Citrus          |            95
+ Nutty           |            55
+ Fruity/Berry    |            30
+ Caramel         |            22
+ Tropical        |             5
+(9 rows)
+
+ occasion  | total_recipes 
+-----------+---------------
+ Everyday  |          1726
+ Christmas |            13
+ Halloween |             6
+ Easter    |             4
+ Valentine |             4
+ Birthday  |             2
+(6 rows)
+
+           title           | flavour_profile |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ingredients_list                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | ingredient_count 
+---------------------------+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------
+ Banana Bread              | Nutty           | 1 1/2 c. mashed bananas, 1 1/2 c. sugar, 1 1/2 tsp. baking powder, 1 1/2 tsp. soda, 1 1/4 or more mashed, fully-ripened bananas, 1 1/4 tsp. baking powder, 1 1/8 c. buttermilk, 1 c. chopped nuts, 1 c. chopped pecans, 1 c. mashed bananas, 1 c. mashed bananas (3), 1 c. mashed bananas (about 3), 1 c. pecans, chopped, 1 c. shortening, 1 c. sugar, 1 egg, 1 stick butter, 1 stick oleo, 1 tsp. baking powder, 1 tsp. baking soda, 1 tsp. lemon juice, 1 tsp. salt, 1 tsp. soda, 1 tsp. soda, dissolve in 1 Tbsp. water, 1 tsp. vanilla, 1/2 c. butter or margarine, 1/2 c. buttermilk, 1/2 c. finely chopped nuts, 1/2 c. nuts, chopped, 1/2 c. shortening, 1/2 c. sugar, 1/2 c. sweet milk, 1/2 tsp. salt, 1/2 tsp. vanilla, 1/4 c. Puritan oil, 1/4 c. shortening, melted, 1/4 c. skim milk, 1/8 tsp. salt, 2 1/2 c. flour, 2 1/2 c. sugar, 2 c. all-purpose flour, 2 c. buttermilk, 2 c. flour, 2 c. self-rising flour, 2 c. sifted flour, 2 c. sugar, 2 eggs, 2 Tbsp. vanilla flavoring, 2 tsp. baking powder, 2 tsp. baking soda, 2 tsp. salt, 2 tsp. vanilla, 2/3 c. buttermilk, 2/3 c. Crisco (butter flavor), 3 1/2 c. flour, 3 bananas, 3 bananas, mashed, 3 c. all-purpose flour, 3 c. bananas, mashed, 3 c. sifted all-purpose flour, 3 eggs, 3 large bananas (almost black), 3 tsp. baking powder, 3/4 c. oleo, 3/4 c. sugar, 3/4 c. walnuts, 3/4 tsp. baking soda, 4 1/2 c. Sapphire flour, 4 egg whites, 4 eggs, 5 very ripe bananas, mashed, pinch of salt      |               72
+ Chocolate Chip Cookies    | Chocolate       | 1 (12 oz.) pkg. chocolate chips, 1 (22 oz.) box quick oatmeal, 1 (6 oz.) pkg. semi-sweet chocolate chips, 1 1/2 c. all-purpose flour (unsifted, spoon into measure and level off), 1 1/2 lb. peanut butter, 1 1/4 c. sifted flour, 1 c. butter flavored Crisco, 1 c. chocolate chips, 1 c. chopped nuts, 1 c. pecans (optional), 1 c. raisins, 1 c. shortening, 1 c. softened shortening, 1 c. sugar, 1 c. white sugar, 1 egg, 1 pkg. semi-sweet chocolate pieces, 1 stick butter or margarine, 1 tsp. baking powder, 1 tsp. baking soda, 1 tsp. salt, 1 tsp. vanilla, 1/2 c. brown sugar, packed, 1/2 c. butter or margarine, 1/2 c. chopped nuts (optional), 1/2 c. chopped pecans, 1/2 c. granulated sugar, 1/2 c. lard, 1/2 c. milk, 1/2 lb. chocolate chips, 1/2 lb. M&M's, 1/2 tsp. salt, 1/2 tsp. soda, 1/2 tsp. vanilla, 1/2 tsp. water, 1/3 c. firmly packed brown sugar, 1/3 c. margarine, softened, 1/3 c. shortening, 2 1/2 c. flour, 2 1/2 c. sifted flour, 2 c. brown sugar, 2 c. chocolate chips, 2 c. flour, 2 c. shortening, 2 eggs, 2 sticks margarine, 2 Tbsp. corn syrup, 2 Tbsp. hot water, 2 tsp. baking soda, 2 tsp. salt, 2 tsp. soda, 2 tsp. vanilla, 3 c. all-purpose flour, 3 eggs, 3 tsp. vanilla, 3/4 c. brown sugar, 3/4 c. firmly packed brown sugar, 3/4 c. granulated sugar, 3/4 c. white sugar, 3/4 tsp. soda, 4 1/2 c. flour, 4 eggs, 4 tsp. baking soda, 6 eggs                                                                                 |               64
+ Apple Pie                 | Spiced          | 1 (9-inch) unbaked pie shell, plus dough for lattice or double crust top, 1 1/2 teaspoons ground cinnamon, 1 c. cinnamon, 1 c. sugar, 1 dash ground cloves, 1 egg, lightly beaten, 1 pinch salt, 1 stick melted butter, 1 tablespoon butter, 1 tablespoon cornstarch, 1 tablespoon lemon juice, 1 Tbsp. butter, 1 Tbsp. lemon juice, 1 tsp. cinnamon, 1/2 c. sugar, 1/2 cup light brown sugar, 1/2 to 1 tsp. ground cinnamon, 10-inch pie shell, 12 cup cold butter, broken into small pieces, 12 teaspoon ground cinnamon, 12 teaspoon ground nutmeg, 13-23 cup sugar, 14 cup all-purpose flour, 14 cup brown sugar, 14 cup granulated sugar, 14 teaspoon ground nutmeg, 14 teaspoon salt, 2 12 cups white flour, 2 tablespoons margarine, 2 tablespoons sugar, 2 Tbsp. all-purpose flour, 2 Tbsp. butter, 2 Tbsp. flour, 2 Tbsp. orange juice, 2 unbaked 9-inch pie shells, 3/4 c. flour, 3/4 c. sugar, 3/4 to 1 c. sugar, 4 apples, 4 c. sugar, 5 tablespoons cold vegetable shortening, 6 c. apples, 6 c. flour, 6 c. thin sliced, peeled cooking apples, 6 to 8 medium Granny Smith apples, cored and sliced, 6 to 8 tart apples, pared and sliced, 7 cups apples, thinly sliced peeled, 8 medium sized apples, 8 tablespoons ice water, 9 c. butter, apples, butter, Dash ground cloves, dash of allspice, dash of ground nutmeg, dash of nutmeg, dash of salt, pastry for double-crust pie, Pinch ground nutmeg, Pinch salt                                                  |               60
+ Strawberry Pie            | Fruity/Berry    | 1 (16 oz.) pkg. frozen strawberries, 1 (3 oz.) box strawberry-flavored gelatin, 1 (8 or 9-inch) pie crust, baked, 1 (8 oz.) pkg. cream cheese, softened, 1 (9-inch) baked shell, 1 1/2 c. boiling water, 1 1/2 c. sugar, 1 1/2 c. water, 1 1/2 Tbsp. instant vanilla pudding mix, 1 baked pie crust, 1 baked pie shell, 1 baked pie shell, cooled, 1 c. boiling water, 1 c. confectioners sugar, 1 c. heavy cream, 1 c. pecans, chopped, 1 c. sugar, 1 c. water, 1 can condensed milk, 1 deep dish pie shell, baked, 1 large Cool Whip, 1 pie shell, baked, 1 pkg. frozen sweet sliced strawberries, 1 pt. capped, washed, sliced strawberries, 1 pt. strawberries, capped and sliced, 1 qt. fresh strawberries, 1 qt. fresh strawberries, sliced, 1 qt. strawberries (fresh), 1 small pkg. strawberry jello, 1 Tbsp. lemon juice, 1/2 c. whipping cream, 2 c. fresh strawberries, 2 c. strawberries, 2 graham cracker crusts, 2 pt. strawberries, halved, 2 Tbsp. or 1/2 box strawberry jello, 2 tsp. butter, 2/3 c. water, 3 oz. pkg. strawberry gelatin, 3 oz. pkg. strawberry jello mix, 3 qt. strawberries, 3 Tbsp. cornstarch, 3 Tbsp. lemon juice, 3 Tbsp. strawberry gelatin (jello), 3 Tbsp. strawberry Jell-O, 3 to 4 Tbsp. cornstarch, 3/4 c. sugar, 4 Tbsp. cornstarch, 4 Tbsp. strawberry Jell-O, 4 Tbsp. strawberry jello, 6 Tbsp. cornstarch, 8 oz. 7-Up, 8-inch baked pie shell, Cool Whip, pinch of salt, red food coloring (optional), whipped cream or Cool Whip |               57
+ Carrot Cake               | Spiced          | 1 1/2 c. oil, 1 1/3 c. oil, 1 1/4 c. vegetable oil, 1 1/4 c. Wesson oil, 1 3/4 c. sugar, 1 c. black walnuts, 1 c. broken nuts, 1 c. cooking oil, 1 c. flour, 1 c. sugar, 1 egg, 1 jar junior baby food carrots, 1 medium can crushed pineapple, drained, 1 pkg. snack cake mix, 1 small can crushed pineapple, 1 tsp. baking powder, 1 tsp. baking soda, 1 tsp. cinnamon, 1 tsp. salt, 1/2 c. chopped nuts, 1/2 c. chopped pecans or more, 1/2 c. raisins or more, 1/2 tsp. cinnamon, 1/2 tsp. Crisco, 1/2 tsp. salt, 1/3 c. applesauce, 1/4 c. chopped pecans, 2 c. all-purpose flour, 2 c. flour, 2 c. plain flour, 2 c. sugar, 2 eggs, 2 tsp. baking powder, 2 tsp. baking soda, 2 tsp. cinnamon, 2 tsp. salt, 2 tsp. soda, 3 c. carrots, grated, 3 c. grated carrots, 3 c. grated raw carrots *, 4 beaten eggs, 4 eggs, 4 eggs, beaten, 4 medium carrots, 4 small jars baby carrots, Cream Cheese Frosting                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |               46
+ Apple Crisp               | Spiced          | 1 1/2 c. brown sugar, 1 1/2 c. oatmeal (uncooked), 1 1/2 c. old fashioned oatmeal, 1 c. flour, 1 c. sifted flour, 1 c. sugar, 1 qt. sliced, peeled apples, 1 stick (1/4 lb.) butter or margarine, 1 stick margarine, 1 tsp. baking powder, 1 tsp. cinnamon, 1 tsp. lemon juice, 1 tsp. salt, 1 unbeaten egg, 1/2 c. butter, 1/2 c. flour, 1/2 c. granulated or brown sugar, packed, 1/2 c. shortening, 1/2 c. sugar, 1/2 c. water, 1/2 tsp. cinnamon, 1/2 tsp. salt, 1/3 c. butter, 1/3 c. sugar, 1/4 c. water, 2 1/2 c. vanilla wafers, crushed, 2 c. sliced apples (or a few more to fit the pan), 2 large cans applesauce, 2 Tbsp. butter, melted, 2 Tbsp. water, 2 tsp. cinnamon, 3/4 c. flour, 3/4 c. sugar, 3/4 tsp. salt, 4 c. sliced, pared tart apples, 4 Tbsp. butter or margarine, 5 to 6 apples, peeled and sliced, 5 to 6 c. sliced, pared apples (6), 6 c. peeled and sliced apples, 6 medium cooking apples, peeled, 6 Tbsp. butter, 6 Tbsp. flour, 7/8 to 1 c. sugar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |               43
+ Fruit Cocktail Cake       | Other           | 1 (16 ounce) can fruit cocktail, undrained, 1 (16 oz.) can fruit cocktail, 1 (17 oz.) can fruit cocktail, 1 1/2 c. flour, 1 1/2 c. sugar, 1 12 cups flour, 1 beaten egg, 1 box yellow cake mix, 1 c. brown sugar, 1 c. chopped nuts, 1 c. coconut, 1 c. nuts (pecans), 1 c. pecans, 1 c. sugar, 1 can fruit cocktail, 1 cup brown sugar, 1 cup sugar, 1 egg, 1 large can fruit cocktail, 1 large can fruit cocktail and juice, 1 medium can fruit cocktail, 1 stick melted butter or margarine, 1 teaspoon baking soda, 1 tsp. baking soda, 1 tsp. soda, 1 tsp. vanilla, 1/2 pkg. yellow cake mix, 1/2 stick butter, 1/2 tsp. baking powder, 1/2 tsp. salt, 1/4 stick melted margarine or butter, 1/8 tsp. salt, 12 cup chopped pecans, 12 cup coconut, 12 cup margarine, softened, 14 teaspoon salt, 2 c. flour, 2 c. self-rising flour, 2 c. sugar, 2 eggs, 2 eggs, beaten well, 2 tsp. soda                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |               42
+ Pecan Pie                 | Vanilla/Cream   | 1 (9-inch) pastry shell, unbaked, 1 1/2 c. pecans, 1 c. broken pecans, 1 c. chopped pecans, 1 c. dark brown sugar, 1 c. dark corn syrup, 1 c. Karo light corn syrup, 1 c. light corn syrup, 1 c. light Karo syrup, 1 c. pecan halves, 1 c. pecans, 1 c. sugar, 1 c. sugar (white or brown), 1 c. syrup, 1 c. syrup (table), 1 frozen deep dish pie crust, 1 Tbsp. butter, melted, 1 tsp. salt, 1 tsp. vanilla, 1/2 c. Pet evaporated milk, 1/2 tsp. salt, 1/3 c. butter, melted, 1/4 tsp. salt, 1/8 tsp. salt, 2 c. Karo light syrup, 2 c. pecan halves, 2 c. sugar, 2 eggs, 2 Tbsp. margarine, melted, 2 Tbsp. self-rising flour, 2 tsp. vanilla, 2 unbaked (9-inch) pie shells, 2/3 c. sugar, 3 eggs, 3/4 c. sugar, 3/4 tsp. vanilla, 4 eggs, 4 Tbsp. margarine, melted, 6 eggs, 8 or 9-inch pastry crust                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |               40
+ Chocolate Oatmeal Cookies | Chocolate       | 1 1/4 c. brown sugar, firmly packed, 1 12 cups rolled oats, 1 3/4 c. all-purpose flour, 1 c. (2 sticks) butter or margarine, softened, 1 c. chopped nuts, 1 c. nuts (optional), 1 stick butter, 1 teaspoon vanilla extract, 1 tsp. baking soda, 1 tsp. vanilla, 1/2 c. cocoa, 1/2 c. milk, 1/2 c. peanut butter, 1/2 c. white sugar, 1/2 tsp. salt (optional), 116 teaspoon baking powder, 12 cup packed brown sugar, 12 teaspoon almond extract, 12 teaspoon baking soda, 14 cup cocoa powder, 14 cup Earth Balance margarine, 14 cup evaporated cane juice, 14 cup mashed banana, 14 teaspoon salt, 2 1/2 c. Quaker oats (quick; uncooked), 2 1/2 c. quick oatmeal, 2 c. sugar, 2 eggs, 2 Tbsp. cocoa and chocolate chips (if desired), 2 Tbsp. milk, 2 tsp. vanilla, 2/3 c. oatmeal, 3 tablespoons ground flax seeds, 3 tablespoons water, 3 tsp. cocoa, 34 cup whole wheat pastry flour                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |               36
+ Apple Cake                | Vanilla/Cream   | 1 1/2 c. oil, 1 1/2 cup sugar, 1 3/4 c. sugar, 1 c. Crisco oil, 1 c. nuts, 1 c. pecans, 1 pinch salt, 1 tbsp baking powder, 1 tbsp cinnamon powder, 1 tsp. baking soda, 1 tsp. cinnamon, 1 tsp. vanilla, 1/2 c. oil, 1/2 c. raisins, 1/2 tsp. salt, 1/4 tsp. salt, 2 c. chopped apples, 2 c. flour, 2 c. sugar, 2 cup flour, 2 eggs, 2 tsp. cinnamon, 2 tsp. soda, 2 tsp. vanilla, 3 c. flour, 3 c. raw apples, 3 eggs, 3 medium apples, 3 medium eggs, 3/4 cup vegetable oil, 4 c. chopped apples, 5 large apples, peeled and sliced as for pie                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |               32
+(10 rows)
+
+           title            | occasion | flavour_profile | total_steps 
+----------------------------+----------+-----------------+-------------
+ Apple Pie                  | Everyday | Spiced          |         194
+ Strawberry Pie             | Everyday | Fruity/Berry    |         144
+ Banana Bread               | Everyday | Nutty           |         128
+ True Butterscotch Pie      | Everyday | Vanilla/Cream   |          90
+ Cannoli                    | Everyday | Chocolate       |          84
+ White Chocolate Stick Cake | Everyday | Chocolate       |          84
+ Chocolate Chip Cookies     | Everyday | Chocolate       |          84
+ Apple Crisp                | Everyday | Spiced          |          82
+ Key Lime Pie               | Everyday | Citrus          |          78
+ "pumpkin Pie" Cheesecake   | Everyday | Vanilla/Cream   |          76
+(10 rows)
+
+           title           | flavour_profile | ingredient_count 
+---------------------------+-----------------+------------------
+ Banana Bread              | Nutty           |               72
+ Chocolate Chip Cookies    | Chocolate       |               64
+ Apple Pie                 | Spiced          |               60
+ Strawberry Pie            | Fruity/Berry    |               57
+ Carrot Cake               | Spiced          |               46
+ Apple Crisp               | Spiced          |               43
+ Fruit Cocktail Cake       | Other           |               42
+ Pecan Pie                 | Vanilla/Cream   |               40
+ Chocolate Oatmeal Cookies | Chocolate       |               36
+ Sweet Potato Pie          | Vanilla/Cream   |               32
+(10 rows)
+
+ flavour_profile |    tag    | tag_count 
+-----------------+-----------+-----------
+ Caramel         | butter    |        20
+ Chocolate       | sugar     |       596
+ Citrus          | sugar     |       136
+ Fruity/Berry    | sugar     |        62
+ Nutty           | sugar     |        78
+ Other           | flour     |       254
+ Spiced          | flour     |       202
+ Tropical        | eggs      |         8
+ Tropical        | pineapple |         8
+ Vanilla/Cream   | sugar     |      1070
+(10 rows)
+
+ difficulty | recipe_count | avg_steps 
+------------+--------------+-----------
+ Easy       |           86 |      2.00
+ Medium     |          278 |      5.22
+ Hard       |         1391 |     18.63
+(3 rows)
+
+ flavour_profile |                         ingredient                          | used_count 
+-----------------+-------------------------------------------------------------+------------
+ Caramel         | 1 egg                                                       |          4
+ Caramel         | 1/2 cup brown sugar                                         |          2
+ Caramel         | 1 cup milk                                                  |          2
+ Caramel         | 1/4 teaspoon salt                                           |          2
+ Chocolate       | 1 tsp. vanilla                                              |         79
+ Chocolate       | 2 eggs                                                      |         53
+ Chocolate       | 2 c. sugar                                                  |         46
+ Citrus          | 4 eggs                                                      |         12
+ Citrus          | 1 c. sugar                                                  |          9
+ Citrus          | 3 eggs                                                      |          8
+ Fruity/Berry    | 1/2 teaspoon salt                                           |          5
+ Fruity/Berry    | 2 teaspoons baking powder                                   |          4
+ Fruity/Berry    | 1 c. sugar                                                  |          4
+ Nutty           | 1 c. sugar                                                  |         11
+ Nutty           | 2 eggs                                                      |          7
+ Nutty           | 1 tsp. vanilla                                              |          5
+ Nutty           | 1 egg                                                       |          5
+ Other           | 1 egg                                                       |         19
+ Other           | 1/2 tsp. salt                                               |         19
+ Other           | 1 c. sugar                                                  |         18
+ Other           | 1 tsp. salt                                                 |         18
+ Spiced          | 1 tsp. cinnamon                                             |         26
+ Spiced          | 1 c. sugar                                                  |         20
+ Spiced          | 1 egg                                                       |         20
+ Tropical        | 2 c. flour                                                  |          2
+ Tropical        | 2 eggs                                                      |          2
+ Tropical        | 1 large can pineapple                                       |          1
+ Tropical        | 20 oz. crushed pineapple (undrained)                        |          1
+ Tropical        | 1 large green jalapeno, stemmed, seeded, and finely chopped |          1
+ Tropical        | 8 oz cool whip                                              |          1
+ Tropical        | 1 lb. Swans Down cake flour                                 |          1
+ Tropical        | 1 can fruit cocktail, unsweetened                           |          1
+ Tropical        | 1 lb. butter                                                |          1
+ Tropical        | 2 tsp. baking soda                                          |          1
+ Tropical        | 3/4 c. oil                                                  |          1
+ Tropical        | 1 c. white sugar                                            |          1
+ Tropical        | 1 1/2 c. sugar                                              |          1
+ Tropical        | 2 pie shells, cooked and cooled                             |          1
+ Tropical        | 1 c. chopped nuts                                           |          1
+ Tropical        | 1 tsp. soda                                                 |          1
+ Tropical        | 2 cups mango nectar (recommended: Kerns)                    |          1
+ Tropical        | 1 small can pineapple juice                                 |          1
+ Tropical        | 1 (No. 2) can crushed pineapple                             |          1
+ Tropical        | 2 c. sugar                                                  |          1
+ Tropical        | 1 tsp. salt                                                 |          1
+ Tropical        | 8 eggs                                                      |          1
+ Tropical        | 2 tsp. soda                                                 |          1
+ Tropical        | 12 oz cottage cheese                                        |          1
+ Tropical        | 1 can crushed pineapple, drained                            |          1
+ Tropical        | 2 tbsp cornstarch                                           |          1
+ Tropical        | 1 lb. powdered sugar                                        |          1
+ Tropical        | 1 c. brown sugar                                            |          1
+ Tropical        | 2 cups frozen mango chunks, chopped (recommended: Dole)     |          1
+ Tropical        | 1 box any flavor, unsweetened jello                         |          1
+ Vanilla/Cream   | 1 tsp. vanilla                                              |        123
+ Vanilla/Cream   | 2 eggs                                                      |         91
+ Vanilla/Cream   | 1/2 tsp. salt                                               |         58
+ Vanilla/Cream   | 1 c. sugar                                                  |         58
+(58 rows)
+
+                   title                   | occasion  | ingredient_count | rank_in_occasion 
+-------------------------------------------+-----------+------------------+------------------
+ Grandparent’S Birthday Cake               | Birthday  |               18 |                1
+ Ham Biscuits                              | Birthday  |                8 |                2
+ Christmas Fruit Cake                      | Christmas |               17 |                1
+ Orange Cranberry Christmas Cookies        | Christmas |               12 |                2
+ Festive Holiday Cupcakes                  | Christmas |               12 |                3
+ Holiday Delight Cookies                   | Christmas |               11 |                4
+ Greek christmas cookies "kourabiedes"     | Christmas |               11 |                5
+ Catherine's Christmas Butter Cookies      | Christmas |               10 |                6
+ Christmas Gingerbread Men                 | Christmas |               10 |                7
+ Merry Christmas Cookies                   | Christmas |               10 |                8
+ Danish Christmas Rice Pudding             | Christmas |               10 |                9
+ Christmas Tree Spice Cookies              | Christmas |                9 |               10
+ Holiday Butter Cookies                    | Christmas |                8 |               11
+ Gingerbread Boy Christmas Cookie          | Christmas |                8 |               12
+ Christmas Cookie Bars                     | Christmas |                6 |               13
+ Sesame Greek Easter Cookies (Koulourakia) | Easter    |                9 |                1
+ Easter Biscuits                           | Easter    |                9 |                2
+ Spring Onion Polenta Tart                 | Easter    |                9 |                3
+ Philadelphia Fudge Easter Cake            | Easter    |                6 |                4
+ Banana Bread                              | Everyday  |               72 |                1
+(20 rows)
+
+ flavour_profile | total_recipes | running_total 
+-----------------+---------------+---------------
+ Vanilla/Cream   |           762 |           762
+ Chocolate       |           455 |          1217
+ Other           |           218 |          1435
+ Spiced          |           113 |          1548
+ Citrus          |            95 |          1643
+ Nutty           |            55 |          1698
+ Fruity/Berry    |            30 |          1728
+ Caramel         |            22 |          1750
+ Tropical        |             5 |          1755
+(9 rows)
+
