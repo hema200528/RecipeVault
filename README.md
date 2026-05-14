@@ -38,27 +38,7 @@ what the original source provided.
 
 ## Milestone 1 — Schema Design
 
-### How to Run
-
-**Step 1 — Start PostgreSQL**
-```bash
-brew services start postgresql@18
-```
-
-**Step 2 — Connect and create tables**
-```bash
-psql postgres
-```
-Then paste contents of `schema.sql` and run.
-
-**Step 3 — Verify**
-```sql
-\dt
-```
-Should show 5 tables: recipe, ingredient, recipe_ingredient, step, ner_tag
-
----
-
+ 
 ### Schema Overview
 
 | Table | Type | Purpose |
@@ -140,29 +120,12 @@ Should show 5 tables: recipe, ingredient, recipe_ingredient, step, ner_tag
 
 1. Filtered 100,000 row dataset down to dessert and baking recipes using title keywords
 2. Removed savoury dishes that matched keywords (e.g. chicken pie, fish pie)
-3. Added occasion column — classified from title and NER text
-4. Added flavour_profile column — classified from title and NER text
+3. Added occasion column, classified from title and NER text
+4. Added flavour_profile column, classified from title and NER text
 5. Duplicate titles removed on import using ON CONFLICT DO NOTHING
 
 ---
-
-### How to Run
-
-**Step 1 — Install Python libraries**
-```bash
-pip3 install pandas psycopg2-binary
-```
-
-**Step 2 — Import data**
-```bash
-python3 import_data.py
-```
-
-**Step 3 — Run queries**
-```bash
-psql postgres -f queries.sql
-```
-
+ 
 ---
 
 ### Query Summary
