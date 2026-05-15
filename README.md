@@ -25,17 +25,6 @@ what the original source provided.
 
 ## Repository Structure
 
-| File | Milestone | Purpose |
-|---|---|---|
-| `schema.sql` | M1 | Creates all 5 tables in PostgreSQL |
-| `er_diagram.png` | M1 | ER diagram in Chen notation |
-| `desserts.csv` | M2 | Filtered dessert dataset (1,755 recipes) |
-| `import_data.py` | M2 | Loads CSV data into PostgreSQL |
-| `queries.sql` | M2 | 10 SQL queries |
-| `README.md` | All | This file |
-
----
-
 ## Milestone 1 — Schema Design
 
  
