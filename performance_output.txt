@@ -1,0 +1,104 @@
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on recipe r  (cost=11.80..164.49 rows=455 width=35) (actual time=0.111..0.810 rows=455.00 loops=1)
+   Recheck Cond: ((flavour_profile)::text = 'Chocolate'::text)
+   Heap Blocks: exact=143
+   Buffers: shared hit=145
+   ->  Bitmap Index Scan on idx_recipe_flavour  (cost=0.00..11.69 rows=455 width=0) (actual time=0.062..0.062 rows=455.00 loops=1)
+         Index Cond: ((flavour_profile)::text = 'Chocolate'::text)
+         Index Searches: 1
+         Buffers: shared hit=2
+ Planning:
+   Buffers: shared hit=135
+ Planning Time: 1.025 ms
+ Execution Time: 0.912 ms
+(12 rows)
+
+                                                                  QUERY PLAN                                                                   
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.57..578.74 rows=252 width=34) (actual time=0.372..1.707 rows=262.00 loops=1)
+   Buffers: shared hit=58 read=12
+   ->  Index Scan using idx_recipe_occasion on recipe r  (cost=0.28..13.23 rows=13 width=29) (actual time=0.227..0.238 rows=13.00 loops=1)
+         Index Cond: ((occasion)::text = 'Christmas'::text)
+         Index Searches: 1
+         Buffers: shared hit=13 read=2
+   ->  Index Scan using idx_ner_tag_recipe_id on ner_tag n  (cost=0.29..43.31 rows=19 width=13) (actual time=0.100..0.108 rows=20.15 loops=13)
+         Index Cond: (recipe_id = r.recipe_id)
+         Index Searches: 13
+         Buffers: shared hit=45 read=10
+ Planning:
+   Buffers: shared hit=157 read=4 dirtied=2
+ Planning Time: 1.928 ms
+ Execution Time: 1.762 ms
+(14 rows)
+
+psql:/Users/HemaMalini/DBMS_PRO/performance.sql:39: NOTICE:  relation "idx_recipe_flavour" already exists, skipping
+CREATE INDEX
+psql:/Users/HemaMalini/DBMS_PRO/performance.sql:44: NOTICE:  relation "idx_recipe_occasion" already exists, skipping
+CREATE INDEX
+psql:/Users/HemaMalini/DBMS_PRO/performance.sql:49: NOTICE:  relation "idx_ner_tag_recipe_id" already exists, skipping
+CREATE INDEX
+psql:/Users/HemaMalini/DBMS_PRO/performance.sql:54: NOTICE:  relation "idx_step_recipe_id" already exists, skipping
+CREATE INDEX
+psql:/Users/HemaMalini/DBMS_PRO/performance.sql:59: NOTICE:  relation "idx_recipe_ingredient_recipe_id" already exists, skipping
+CREATE INDEX
+                                                            QUERY PLAN                                                             
+-----------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on recipe r  (cost=11.80..164.49 rows=455 width=35) (actual time=0.065..0.317 rows=455.00 loops=1)
+   Recheck Cond: ((flavour_profile)::text = 'Chocolate'::text)
+   Heap Blocks: exact=143
+   Buffers: shared hit=145
+   ->  Bitmap Index Scan on idx_recipe_flavour  (cost=0.00..11.69 rows=455 width=0) (actual time=0.035..0.035 rows=455.00 loops=1)
+         Index Cond: ((flavour_profile)::text = 'Chocolate'::text)
+         Index Searches: 1
+         Buffers: shared hit=2
+ Planning Time: 0.056 ms
+ Execution Time: 0.354 ms
+(10 rows)
+
+                                                                  QUERY PLAN                                                                   
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ Nested Loop  (cost=0.57..578.74 rows=252 width=34) (actual time=0.015..0.163 rows=262.00 loops=1)
+   Buffers: shared hit=70
+   ->  Index Scan using idx_recipe_occasion on recipe r  (cost=0.28..13.23 rows=13 width=29) (actual time=0.009..0.015 rows=13.00 loops=1)
+         Index Cond: ((occasion)::text = 'Christmas'::text)
+         Index Searches: 1
+         Buffers: shared hit=15
+   ->  Index Scan using idx_ner_tag_recipe_id on ner_tag n  (cost=0.29..43.31 rows=19 width=13) (actual time=0.003..0.007 rows=20.15 loops=13)
+         Index Cond: (recipe_id = r.recipe_id)
+         Index Searches: 13
+         Buffers: shared hit=55
+ Planning:
+   Buffers: shared hit=12
+ Planning Time: 0.202 ms
+ Execution Time: 0.191 ms
+(14 rows)
+
+CREATE FUNCTION
+ recipe_id |                                     title                                      | occasion | step_count 
+-----------+--------------------------------------------------------------------------------+----------+------------
+      1154 | Cannoli                                                                        | Everyday |         84
+        52 | Chocolate Chip Cookies                                                         | Everyday |         84
+      1993 | White Chocolate Stick Cake                                                     | Everyday |         84
+       980 | Chocolate Cupcakes with Chocolate Mascarpone Filling and Zinfandel Buttercream | Everyday |         76
+      1496 | Chocolate Caramel Tart with Sea Salt                                           | Everyday |         74
+(5 rows)
+
+ recipe_id |              title              | occasion | step_count 
+-----------+---------------------------------+----------+------------
+        56 | Key Lime Pie                    | Everyday |         78
+       169 | Easiest Tastiest Baklava Recipe | Everyday |         50
+      1280 | Apple Pie From Scratch          | Everyday |         50
+       107 | Peach Cobbler                   | Everyday |         46
+       139 | Easy! Open Apple Pie Bites      | Everyday |         42
+(5 rows)
+
+ recipe_id |           title           | occasion | step_count 
+-----------+---------------------------+----------+------------
+       295 | Apple Pie                 | Everyday |        194
+         2 | Apple Crisp               | Everyday |         82
+       627 | Carrot Cake               | Everyday |         72
+       922 | Truck Stop Cinnamon Rolls | Everyday |         54
+       865 | Ginger Cookies            | Everyday |         54
+(5 rows)
+
