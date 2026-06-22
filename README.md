@@ -1,188 +1,194 @@
-# RecipeVault
+# RecipeVault 🧁
 
-**Student:** Hemamalini Kamaladhasan  
-**Roll Number:** ZDA24B025  
-**Track:** A — RAG Pipeline  
-**Database:** PostgreSQL 18  
+**A Cozy Dessert Recipe Assistant Powered by a RAG Pipeline**
+
+**Student:** Hemamalini Kamaladhasan
+**Roll Number:** ZDA24B025
+**Track:** A — RAG Pipeline
+**Course:** Z2004 Database Management Systems · IIT Madras Zanzibar
+**Database:** PostgreSQL 18 · **Vector store:** Pinecone
+**Developed on:** macOS (Apple Silicon), using VS Code + SQLTools
 
 ---
 
 ## Project Overview
 
-## Project Overview
+RecipeVault is a dessert recipe assistant built on a relational PostgreSQL database with a Retrieval-Augmented Generation (RAG) pipeline. A user asks for a dessert in plain English — for example, *"a chocolate cake under 5 steps"* — and the app returns matching recipes pulled directly from the database, each grounded and cited.
 
-RecipeVault is a smart dessert recipe assistant built on a relational 
-database and a RAG pipeline. The original dataset contained 100,000 
-recipes from Kaggle, this was narrowed down specifically to dessert 
-and baking recipes based on title keywords, resulting in a focused 
-dataset of 1,755 recipes. The system answers natural language questions 
-like "give me a chocolate cake recipe under 5 steps" with grounded, 
-cited answers pulled directly from the database. Two custom columns :
-occasion and flavour_profile were added to enrich the dataset beyond 
-what the original source provided.
+Searching for recipes online is often overwhelming and cluttered. RecipeVault solves this with intelligent semantic search and a calm, soothing interface that keeps the focus on finding a recipe quickly.
+
+The original dataset of 100,000 Kaggle recipes was narrowed to **1,755 dessert recipes** by title keywords. Two custom columns — `occasion` and `flavour_profile` — were added to enrich it.
 
 ---
 
 ## Repository Structure
 
-| File | Milestone | Purpose |
-|---|---|---|
-| `schema.sql` | M1 | Creates all 5 tables in PostgreSQL |
-| `er_diagram.png` | M1 | ER diagram in Chen notation |
-| `desserts.csv` | M2 | Filtered dessert dataset (1,755 recipes) |
-| `import_data.py` | M2 | Loads CSV data into PostgreSQL |
-| `queries.sql` | M2 | 10 SQL queries |
-| `README.md` | All | This file |
+```
+RecipeVault/
+├── schema/        ER diagram + final DDL script (schema.sql)
+├── data/          Full dataset (desserts.csv) + import script
+├── queries/       All 10 SQL queries, labelled by purpose
+├── performance/   Indexing, EXPLAIN ANALYZE results, stored procedure
+├── app/           Python RAG application (terminal + web interface)
+├── report/        Final report (PDF)
+├── demo/          5-minute demo video
+└── README.md      This file
+```
 
 ---
 
-## Milestone 1 — Schema Design
+## How It Works (RAG Pipeline)
 
-### How to Run
+1. The user's question is turned into an **embedding** (384 numbers) using `all-MiniLM-L6-v2` in Python.
+2. The embedding is sent to **Pinecone**, which finds the closest matching recipes by meaning.
+3. The matching recipe IDs are used to fetch full details from **PostgreSQL**.
+4. Results are shown with a match score and a link to the source recipe.
 
-**Step 1 — Start PostgreSQL**
+If Pinecone or the network is unavailable, the app **falls back** to a PostgreSQL keyword search, so it always returns results.
+
+---
+
+## Setup and Run Instructions (Start to Finish)
+
+This project was developed on macOS using **VS Code with the SQLTools extension** to run SQL, and the terminal for starting PostgreSQL and running the Python app.
+
+### Prerequisites
+- PostgreSQL 18 (via Homebrew)
+- Python 3
+- VS Code with the **SQLTools** + **SQLTools PostgreSQL** extensions
+- A free Pinecone account + API key
+
+### Step 1 — Start PostgreSQL (terminal)
 ```bash
 brew services start postgresql@18
 ```
 
-**Step 2 — Connect and create tables**
-```bash
-psql postgres
-```
-Then paste contents of `schema.sql` and run.
+### Step 2 — Connect VS Code to the database
+In VS Code, open the **SQLTools** sidebar and connect with:
+- Driver: **PostgreSQL**
+- Server: `localhost`  ·  Port: `5432`
+- Database: `postgres`  ·  Username: your Mac username
+- (no password)
 
-**Step 3 — Verify**
+### Step 3 — Create the tables (VS Code)
+Open `schema/schema.sql` in VS Code, connect via SQLTools, and run the whole file (right-click → Run Query / **Cmd+E Cmd+E**). Then verify by running:
 ```sql
-\dt
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
 ```
-Should show 5 tables: recipe, ingredient, recipe_ingredient, step, ner_tag
+You should see 5 tables: recipe, ingredient, recipe_ingredient, step, ner_tag.
+
+### Step 4 — Load the data (terminal)
+```bash
+pip3 install pandas psycopg2-binary
+python3 data/import_data.py
+```
+Then in VS Code, verify:
+```sql
+SELECT COUNT(*) FROM recipe;   -- should return 1755
+```
+
+### Step 5 — Install app dependencies (terminal)
+```bash
+pip3 install sentence-transformers pinecone python-dotenv flask flask-cors
+```
+
+### Step 6 — Configure secrets
+Copy `app/.env.example` to `app/.env` and fill in your Pinecone API key:
+```
+PINECONE_API_KEY=your_key_here
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=postgres
+DB_USER=your_username
+```
+
+### Step 7 — Build the vector index (terminal, run once)
+```bash
+cd app
+python3 build_index.py
+```
+This embeds all 1,755 recipes into Pinecone. Expect: "Total vectors in index: 1755".
+
+### Step 8 — Run the app (terminal)
+
+**Web interface (recommended):**
+```bash
+python3 server.py
+```
+Then open **http://localhost:5050** in your browser.
+
+**Terminal interface:**
+```bash
+python3 app.py
+```
+Type a craving (e.g. "chocolate cake"); type `quit` to exit.
 
 ---
 
-### Schema Overview
+## Three Test Cases (Expected Outputs)
 
-| Table | Type | Purpose |
-|---|---|---|
-| `recipe` | Entity | Core recipe data — title, directions, occasion, flavour_profile |
-| `ingredient` | Entity | Normalised ingredient master list |
-| `recipe_ingredient` | Junction | Resolves M:N between recipes and ingredients |
-| `step` | Weak Entity | Ordered cooking steps per recipe |
-| `ner_tag` | Weak Entity | NLP extracted food tags per recipe |
+| Input | Expected Output |
+|-------|-----------------|
+| `chocolate cake` | Chocolate-flavour cakes (e.g. "Chocolate Cake And Its Icing") with match scores |
+| `lemon dessert` | Citrus-flavour desserts (lemon/lime tarts, pies) |
+| `christmas treat` | Recipes with occasion = Christmas |
 
----
-
-### 3NF Argument
-
-**recipe**
-- FD: recipe_id → title, directions, link, source, occasion, flavour_profile
-- No partial dependencies (single attribute PK)
-- No transitive dependencies
-- ✓ 3NF
-
-**ingredient**
-- FD: ingredient_id → name, category
-- No partial or transitive dependencies
-- ✓ 3NF
-
-**recipe_ingredient**
-- FD: (recipe_id, ingredient_id) → quantity, unit
-- quantity and unit depend on the full composite key — not just one part
-- ✓ 3NF
-
-**step**
-- FD: step_id → recipe_id, step_number, description
-- All attributes depend directly on step_id
-- ✓ 3NF
-
-**ner_tag**
-- FD: ner_id → recipe_id, tag
-- All attributes depend directly on ner_id
-- ✓ 3NF
+### Fallback Plan (network/API down)
+If Pinecone is unavailable, the app automatically switches to a PostgreSQL keyword search on recipe titles and flavours. For example, searching `chocolate` still returns chocolate recipes via SQL `LIKE` matching — no crash, results still appear.
 
 ---
 
-## Milestone 2 — Dataset and Queries
+## Database Design
 
-### Dataset
+5 tables, normalised to 3NF:
 
-- **Source:** RecipeNLP dataset from Kaggle
-- **Link:** https://www.kaggle.com/datasets/paultimothymooney/recipenlg
-- **Filtered to:** Dessert and baking recipes only
-- **Rows imported:** 1,755 recipes
-- **Extra columns added:** occasion, flavour_profile
+| Table | Primary Key | Purpose |
+|-------|-------------|---------|
+| `recipe` | recipe_id | Core data: title, directions, occasion, flavour_profile |
+| `ingredient` | ingredient_id | Master list of unique ingredients |
+| `recipe_ingredient` | recipe_id + ingredient_id | Junction (M:N) + quantity, unit |
+| `step` | step_id | Ordered cooking steps (weak entity) |
+| `ner_tag` | ner_id | Keyword tags per recipe (weak entity) |
 
-### Data Dictionary
+All foreign keys use `ON DELETE CASCADE`.
 
-| Column | Table | Description |
-|---|---|---|
-| title | recipe | Recipe name |
-| directions | recipe | Full cooking instructions |
-| occasion | recipe | Everyday, Christmas, Birthday, Halloween, Valentine, Easter |
-| flavour_profile | recipe | Chocolate, Vanilla/Cream, Citrus, Caramel, Fruity/Berry, Spiced, Nutty, Tropical |
-| name | ingredient | Ingredient name |
-| quantity | recipe_ingredient | Amount of ingredient used |
-| unit | recipe_ingredient | Unit of measurement |
-| step_number | step | Order of the instruction |
-| description | step | Instruction text |
-| tag | ner_tag | NLP extracted food entity |
-
-### Row Counts After Import
-
+### Row Counts
 | Table | Rows |
-|---|---|
+|-------|------|
 | recipe | 1,755 |
 | ingredient | 9,277 |
 | recipe_ingredient | 17,015 |
-| step | 27,532 |
-| ner_tag | 34,070 |
-
-### Data Cleaning Steps
-
-1. Filtered 100,000 row dataset down to dessert and baking recipes using title keywords
-2. Removed savoury dishes that matched keywords (e.g. chicken pie, fish pie)
-3. Added occasion column — classified from title and NER text
-4. Added flavour_profile column — classified from title and NER text
-5. Duplicate titles removed on import using ON CONFLICT DO NOTHING
+| step | 13,762 |
+| ner_tag | 15,333 |
 
 ---
 
-### How to Run
-
-**Step 1 — Install Python libraries**
-```bash
-pip3 install pandas psycopg2-binary
-```
-
-**Step 2 — Import data**
-```bash
-python3 import_data.py
-```
-
-**Step 3 — Run queries**
-```bash
-psql postgres -f queries.sql
-```
-
----
-
-### Query Summary
+## Queries (10, labelled in queries/queries.sql)
 
 | # | Type | Description |
-|---|---|---|
-| 1 | Aggregation | Recipe count per flavour profile |
-| 2 | Aggregation | Recipe count per occasion |
-| 3 | Join | Recipes with ingredient list and count |
-| 4 | Join | Recipes with occasion, flavour and step count |
-| 5 | Subquery | Recipes above average ingredient count |
-| 6 | Subquery | Recipes with no NER tags |
-| 7 | CTE | Difficulty classification by step count |
-| 8 | CTE | Top 3 ingredients per flavour profile |
-| 9 | Window Function | Rank recipes within each occasion by ingredient count |
-| 10 | Window Function | Running total of recipes by flavour profile |
+|---|------|-------------|
+| 1–2 | Aggregation | Recipe count per flavour / per occasion |
+| 3–4 | Join | Recipes with ingredients / with step counts |
+| 5–6 | Subquery | Above-average ingredient count / no NER tags |
+| 7–8 | CTE | Difficulty classification / top ingredients per flavour |
+| 9–10 | Window function | Rank within occasion / running total by flavour |
+
+Plus a stored procedure `get_recipes_by_flavour()` in performance/.
+
+---
+
+## Performance
+
+5 B-Tree indexes on the columns the app filters and joins on. Measured with `EXPLAIN ANALYZE` in VS Code, before and after:
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Scan type | Hash Join + Seq Scan | Nested Loop + Index Scan |
+| Execution time | 9.421 ms | 0.191 ms |
+| **Improvement** | baseline | **~49× faster** |
 
 ---
 
 ## AI Usage Disclosure
 
-Claude (Anthropic) was used for syntax suggestions, debugging, dataset filtering, and README structure. 
-All design decisions and execution were done independently.
+Claude (Anthropic) was used for syntax suggestions, debugging, dataset filtering, and structuring the code and documentation. All design decisions, query logic, and execution were carried out and verified independently, and the system was built and tested on my own machine.
