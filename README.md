@@ -13,11 +13,11 @@
 
 ## Project Overview
 
-RecipeVault is a dessert recipe assistant built on a relational PostgreSQL database with a Retrieval-Augmented Generation (RAG) pipeline. A user asks for a dessert in plain English — for example, *"a chocolate cake under 5 steps"* — and the app returns matching recipes pulled directly from the database, each grounded and cited.
+RecipeVault is a dessert recipe assistant built on a relational PostgreSQL database with a Retrieval-Augmented Generation (RAG) pipeline. A user asks for a dessert in plain English  for example, *"a chocolate cake under 5 steps"* and the app returns matching recipes pulled directly from the database, each grounded and cited.
 
 Searching for recipes online is often overwhelming and cluttered. RecipeVault solves this with intelligent semantic search and a calm, soothing interface that keeps the focus on finding a recipe quickly.
 
-The original dataset of 100,000 Kaggle recipes was narrowed to **1,755 dessert recipes** by title keywords. Two custom columns — `occasion` and `flavour_profile` — were added to enrich it.
+The original dataset of 100,000 Kaggle recipes was narrowed to **1,755 dessert recipes** by title keywords. Two custom columns `occasion` and `flavour_profile`  were added to enrich it.
 
 ---
 
@@ -84,7 +84,7 @@ python3 data/import_data.py
 ```
 Then in VS Code, verify:
 ```sql
-SELECT COUNT(*) FROM recipe;   -- should return 1755
+SELECT COUNT(*) FROM recipe;   - should return 1755
 ```
 
 ### Step 5 — Install app dependencies (terminal)
