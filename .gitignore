@@ -1,1 +1,7 @@
 .DS_Store
+.env
+**/.env
+app/.env
+__pycache__/
+*.pyc
+backup_before_cleanup.sql
