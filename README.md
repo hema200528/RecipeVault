@@ -7,16 +7,17 @@
 **Track:** A — RAG Pipeline
 **Course:** Z2004 Database Management Systems · IIT Madras Zanzibar
 **Database:** PostgreSQL 18 · **Vector store:** Pinecone
+**Developed on:** macOS (Apple Silicon), using VS Code + SQLTools
 
 ---
 
 ## Project Overview
 
-RecipeVault is a dessert recipe assistant built on a relational PostgreSQL database with a Retrieval-Augmented Generation (RAG) pipeline. A user asks for a dessert in plain English. For example, *"a chocolate cake under 5 steps"* and the app returns matching recipes pulled directly from the database, each grounded and cited.
+RecipeVault is a dessert recipe assistant built on a relational PostgreSQL database with a Retrieval-Augmented Generation (RAG) pipeline. A user asks for a dessert in plain English — for example, *"a chocolate cake under 5 steps"* — and the app returns matching recipes pulled directly from the database, each grounded and cited.
 
 Searching for recipes online is often overwhelming and cluttered. RecipeVault solves this with intelligent semantic search and a calm, soothing interface that keeps the focus on finding a recipe quickly.
 
-The original dataset of 100,000 Kaggle recipes was narrowed to **1,755 dessert recipes** by title keywords. Two custom columns `occasion` and `flavour_profile` were added to enrich it.
+The original dataset of 100,000 Kaggle recipes was narrowed to **1,755 dessert recipes** by title keywords. Two custom columns — `occasion` and `flavour_profile` — were added to enrich it.
 
 ---
 
@@ -49,35 +50,49 @@ If Pinecone or the network is unavailable, the app **falls back** to a PostgreSQ
 
 ## Setup and Run Instructions (Start to Finish)
 
+This project was developed on macOS using **VS Code with the SQLTools extension** to run SQL, and the terminal for starting PostgreSQL and running the Python app.
+
 ### Prerequisites
 - PostgreSQL 18 (via Homebrew)
 - Python 3
+- VS Code with the **SQLTools** + **SQLTools PostgreSQL** extensions
 - A free Pinecone account + API key
 
-### Step 1 — Start PostgreSQL
+### Step 1 — Start PostgreSQL (terminal)
 ```bash
 brew services start postgresql@18
 ```
 
-### Step 2 — Create the database tables
-```bash
-psql postgres -f schema/schema.sql
-```
-Verify with `psql postgres -c "\dt"` — should list 5 tables.
+### Step 2 — Connect VS Code to the database
+In VS Code, open the **SQLTools** sidebar and connect with:
+- Driver: **PostgreSQL**
+- Server: `localhost`  ·  Port: `5432`
+- Database: `postgres`  ·  Username: your Mac username
+- (no password)
 
-### Step 3 — Load the data
+### Step 3 — Create the tables (VS Code)
+Open `schema/schema.sql` in VS Code, connect via SQLTools, and run the whole file (right-click → Run Query / **Cmd+E Cmd+E**). Then verify by running:
+```sql
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+```
+You should see 5 tables: recipe, ingredient, recipe_ingredient, step, ner_tag.
+
+### Step 4 — Load the data (terminal)
 ```bash
 pip3 install pandas psycopg2-binary
 python3 data/import_data.py
 ```
-Verify with `psql postgres -c "SELECT COUNT(*) FROM recipe;"` — should show 1755.
+Then in VS Code, verify:
+```sql
+SELECT COUNT(*) FROM recipe;   -- should return 1755
+```
 
-### Step 4 — Install app dependencies
+### Step 5 — Install app dependencies (terminal)
 ```bash
 pip3 install sentence-transformers pinecone python-dotenv flask flask-cors
 ```
 
-### Step 5 — Configure secrets
+### Step 6 — Configure secrets
 Copy `app/.env.example` to `app/.env` and fill in your Pinecone API key:
 ```
 PINECONE_API_KEY=your_key_here
@@ -87,14 +102,14 @@ DB_NAME=postgres
 DB_USER=your_username
 ```
 
-### Step 6 — Build the vector index (run once)
+### Step 7 — Build the vector index (terminal, run once)
 ```bash
 cd app
 python3 build_index.py
 ```
-This embeds all 1,755 recipes into Pinecone. Expect "Total vectors in index: 1755".
+This embeds all 1,755 recipes into Pinecone. Expect: "Total vectors in index: 1755".
 
-### Step 7 — Run the app
+### Step 8 — Run the app (terminal)
 
 **Web interface (recommended):**
 ```bash
@@ -164,7 +179,7 @@ Plus a stored procedure `get_recipes_by_flavour()` in performance/.
 
 ## Performance
 
-5 B-Tree indexes on the columns the app filters and joins on. Measured with `EXPLAIN ANALYZE` before and after:
+5 B-Tree indexes on the columns the app filters and joins on. Measured with `EXPLAIN ANALYZE` in VS Code, before and after:
 
 | Metric | Before | After |
 |--------|--------|-------|
