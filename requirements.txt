@@ -1,0 +1,7 @@
+pandas
+psycopg2-binary
+sentence-transformers
+pinecone
+python-dotenv
+flask
+flask-cors
